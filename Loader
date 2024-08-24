@@ -1,0 +1,14 @@
+local balls = {
+    [8121617421] = "https://raw.githubusercontent.com/oksavor563/penjaro/main/8121617421"
+    
+}
+
+local currentPlaceId = game.PlaceId
+
+if balls[currentPlaceId] then
+    print("Found supported game: " .. currentPlaceId)
+    local scriptUrl = balls[currentPlaceId]
+    loadstring(game:HttpGet(scriptUrl))()
+else
+    print("Unsupported game")
+end
